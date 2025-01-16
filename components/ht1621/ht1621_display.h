@@ -1,5 +1,10 @@
 #include "esphome.h"
 
+ private:
+  const int CS_PIN = 16;    // Chip Select
+  const int DATA_PIN = 32; // Data
+  const int CLK_PIN = 4;  // Clock
+  
 class HT1621DisplayComponent : public PollingComponent {
  public:
   HT1621DisplayComponent() : PollingComponent(1000) {}
@@ -19,10 +24,7 @@ class HT1621DisplayComponent : public PollingComponent {
     displayText(buffer);
   }
 
- private:
-  const int CS_PIN = 12;    // Chip Select
-  const int DATA_PIN = 15; // Data
-  const int CLK_PIN = 14;  // Clock
+
 //D2 – SD_MISO
 //D12 – SD_CS
 //D14 – SD_SCLK
